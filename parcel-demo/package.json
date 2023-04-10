@@ -1,0 +1,25 @@
+{
+  "name": "parcel-demo",
+  "version": "1.0.0",
+  "private": "true",
+  "source": "src/index.html",
+  "browserslist": "> 0.05%, last 2 versions, not dead",
+  "context": "browser",
+  "outputFormat": "global",
+  "sourceMap": false,
+  "scripts": {
+    "start": "parcel",
+    "prebuild": "rm -rf dist/*",
+    "build": "parcel build --no-source-maps",
+    "prebuild:dev": "rm -rf dist/*",
+    "build:dev": "parcel build --no-optimize",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,19 @@
+{
+  "name": "esbuild-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "esbuild src/js/app.js --bundle --loader:.js=jsx --sourcemap --outdir=www --servedir=www --serve",
+    "start": "node esbuild.serve.config.js",
+    "build": "esbuild src/js/app.js --bundle --loader:.js=jsx --minify --outdir=dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chialab/esbuild-plugin-html": "^0.17.2",
+    "esbuild": "0.17.16"
+  }
+}
