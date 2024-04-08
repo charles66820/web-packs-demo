@@ -1,4 +1,5 @@
-import "../scss/style.scss";
+import * as s from "../scss/style.scss";
+// import "../scss/style.scss";
 import Icon from "../img/icon.png";
 import { printMe, test} from "./print.js";
 
