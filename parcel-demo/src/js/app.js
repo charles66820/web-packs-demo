@@ -1,2 +1,2 @@
-import * as s from "../css/style.css";
+import * as s from "../css/styles.css";
 console.log('Hello world!');
