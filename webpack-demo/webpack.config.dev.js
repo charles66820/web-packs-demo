@@ -4,11 +4,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/js/index.js",
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
+  devtool: "source-map",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -56,6 +58,7 @@ module.exports = {
           cssModules: true,
         },
       }),
+      new TerserPlugin(),
     ],
     minimize: false,
   },
