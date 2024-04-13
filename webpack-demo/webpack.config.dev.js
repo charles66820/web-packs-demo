@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -15,6 +16,10 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /.s?css$/,
+      //   use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      // },
       {
         test: /\.scss$/,
         include: path.resolve(__dirname, "src/scss"),
@@ -39,6 +44,20 @@ module.exports = {
         type: "asset/resource",
       },
     ],
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin({
+        // minify: CssMinimizerPlugin.cssnanoMinify,
+        // minify: CssMinimizerPlugin.cssoMinify,
+        // minify: CssMinimizerPlugin.cleanCssMinify,
+        minify: CssMinimizerPlugin.lightningCssMinify,
+        minimizerOptions: {
+          cssModules: true,
+        },
+      }),
+    ],
+    minimize: false,
   },
   plugins: [
     new MiniCssExtractPlugin({
