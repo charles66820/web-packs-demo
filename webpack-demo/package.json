@@ -6,8 +6,8 @@
   "context": "browser",
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack bundle",
-    "build:dev": "webpack",
+    "build": "webpack build",
+    "build:dev": "webpack build --config webpack.config.dev.js",
 
     "test": "echo \"Error: no test specified\" && exit 1",
 

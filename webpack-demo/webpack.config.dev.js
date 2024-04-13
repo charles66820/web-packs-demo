@@ -5,8 +5,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/js/index.js",
+  devtool: 'inline-source-map',
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -49,7 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       minify: {
-        collapseWhitespace: true,
+        collapseWhitespace: false,
         removeComments: true,
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
